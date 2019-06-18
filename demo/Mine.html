@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My Infomation</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+    <script src="layui/layui.all.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap-4.2.1.js"></script>
+</head>
+
+<body>
+    <!-- particles.js container -->
+    <div id="particles-js">
+        <form name="form1" action="" method="post">
+            <h1>FlashBank</h1>
+            <h2>customerName:</h2><br />
+            <h2>customerNumber:</h2><br />
+            <br />
+            <button style="color: black">修改个人信息</button>
+        </form>
+        <div id='test'></div>
+        <!-- <button id='button1'>测试customerEnquiryApi</button> -->
+    </div>
+
+
+    <!-- scripts -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="../particles.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        onload = function () {
+            // alert("数据: \n" + "\n状态: ");
+            $.ajax({
+                url: 'https://simnectzplatform.com:8080/simnectz_Bank-Deposit_service-account_enquiry/deposit/account/allAccounts/001000000001',
+                dataType: 'json',
+                contentType: 'application/json;charset=UTF-8',
+                type: 'get',
+                headers: {
+                    "Authorization": "5cfe45fe562d5e6ed88a8547bfb79bf7773f46ba95a0aa5981a90391",
+                    "messageid": "006f7113e5fa48559549c4dfe74e2cd6",
+                    "clientid": "devin",
+                    "token": "eyJhbGciOiJIUzUxMiIsInppcCI6IkRFRiJ9.eNo8y00OwiAQhuG7zNoFkBLUpbqwadI7ADNWEn4aWozGeHchNs7yme99A9KDfJop9xc4gkTaG6XtTQrRCWEPhMKojhnDLVdKwg5sKnHNr3NCqsF1aORJZxenzRhjvKrJOtr73xr5NLk46tBkdqGlZVlToDyWYCj_hmy7Viw64ik9e6wv-HwBAAD__w.alc0ibAbJotnPxSQL2wtt9Qo8h0YYzl4WkxOK65PnGy1fK4SDmNRRVEohqOya_K7qOXJOt5Cjdm10cejK3PViA"
+                },
+                success: function (res) {
+                    var info = res.data
+                    $("#particles-js form h2:eq(0)").append(info['customerName']);
+                    $("#particles-js form h2:eq(1)").append(info['customerNumber']);
+                },
+                error: function (e) {
+                }
+            });
+        };
+    </script>
+
+
+</body>
+
+</html>
