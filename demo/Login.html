@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link rel="stylesheet" href="layui/css/layui.css" media="all">
+  <!-- <link rel="stylesheet" media="screen" href="layui/css/layui.css"> -->
+  <!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+</head>
+
+<body>
+  <!-- particles.js container -->
+  <div id="particles-js">
+    <div class="layui-inline" style="position:relative;left:450px;top:200px;">
+      <h1 style="color: white">FlashBank手机快捷登录</h1>
+      <div class="layui-form-item">
+        <label class="layui-form-label" style="color: white">手机号</label>
+        <div class="layui-input-inline">
+          <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input">
+        </div>
+        <button type="button" class="layui-btn layui-btn-primary">发送验证码</button>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label" style="color: white">验证码</label>
+        <div class="layui-input-inline">
+          <input type="password" name="password" lay-verify="pass" placeholder="请输入密码" class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">请填写6位验证码</div>
+      </div>
+      <div style="position:relative;left:90px">
+        <a href="Home.html"><button type="button" class="layui-btn layui-btn-primary">登录</button></a>
+        <a href="Register.html"><button type="button" class="layui-btn layui-btn-primary">注册</button></a></br></br>
+      </div>
+      <div style="position:relative;left:33px">
+        <button type="button" class="layui-btn layui-btn-primary layui-btn-radius">账号密码登录</button>
+        <button type="button" class="layui-btn layui-btn-radius">短信快捷登录</button>
+      </div>
+    </div>
+  </div>
+  <!-- <a href="Home2.html"><img src="image/back.jpg"  sizes="(max-width: 30px) 20px, 20px"></a>
+      <div style="position:relative;left:500px;top:200px;">
+      <h1>FlashBank</h1>
+      <input class=input_1 id=username size=15 name="username" placeholder=用户名><br />
+      <input class=input_1 id=password type=text size=15 name="password" placeholder=密码><br />
+      <br />
+      <a class=input_3 href="Home.html">登录</a>
+      <a class=input_3 href="Register.html">注册</a>
+      </div> -->
+
+
+  <!-- scripts -->
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="../particles.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

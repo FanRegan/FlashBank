@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>particles.js</title>
+  <title>Register</title>
   <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
   <meta name="author" content="Vincent Garreau" />
   <meta name="viewport"
@@ -17,9 +17,8 @@
 </head>
 
 <body>
-
   <!-- particles.js container -->
-  <div id="particles-js" >
+  <a href="Login.html"><img src="image/back.jpg"  sizes="(max-width: 30px) 20px, 20px"></a>
     <div style="position:relative;left:330px;top:380px;">
       <h1>FlashBank</h1>
       <input class=input_1 id=username size=15 name="username" placeholder=用户名><br />
@@ -38,10 +37,8 @@
       <input class=input_1 id=password size=15 name="password" placeholder=密码><br />
       <input class=input_1 id=password size=15 name="password" placeholder=密码><br /><br />
       <button id='button1' class=input_3 >注册</button>
-
     </div>
     <div id='test'></div>
-  </div>
 
 
   <!-- scripts -->
@@ -95,7 +92,7 @@
         },
         success: function (res) {
           alert("注册成功！")
-          window.location.href="Home.html";
+          window.location.href="Login.html";
         },
         error: function (e) {
         }

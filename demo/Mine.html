@@ -15,14 +15,14 @@
 
 <body>
     <!-- particles.js container -->
-    <div id="particles-js">
-        <form name="form1" action="" method="post">
-            <h1>FlashBank</h1>
-            <h2>customerName:</h2><br />
-            <h2>customerNumber:</h2><br />
-            <br />
-            <button style="color: black">修改个人信息</button>
-        </form>
+    <a href="Home.html"><img src="image/back.jpg"  sizes="(max-width: 30px) 20px, 20px"></a>
+    <div>
+        <h1>FlashBank</h1>
+        <h2>customerName:</h2><br />
+        <h2>customerNumber:</h2><br />
+        <br />
+        <a type=button href='InfoUpdate.html' style="color: black">修改个人信息</a>
+        <a type=button href='Home2.html' style="color: black">退出登录</a>
         <div id='test'></div>
         <!-- <button id='button1'>测试customerEnquiryApi</button> -->
     </div>
@@ -48,8 +48,8 @@
                 },
                 success: function (res) {
                     var info = res.data
-                    $("#particles-js form h2:eq(0)").append(info['customerName']);
-                    $("#particles-js form h2:eq(1)").append(info['customerNumber']);
+                    $("h2:eq(0)").append(info['customerName']);
+                    $("h2:eq(1)").append(info['customerNumber']);
                 },
                 error: function (e) {
                 }
