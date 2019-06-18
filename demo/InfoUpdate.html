@@ -8,7 +8,8 @@
     <meta name="author" content="Vincent Garreau" />
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" media="screen" href="css/style.css">
+    <!-- <link rel="stylesheet" media="screen" href="css/style.css"> -->
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
     <!-- <link rel="stylesheet" type="text/css" href="css/css.css"> -->
     <!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -16,58 +17,111 @@
           src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </head>
 
+<style>
+    .layui-form-label {
+        width: 240px;
+        font-size: 1.5em;
+    }
+
+
+    body {
+        background-image: URL(images/3.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
 <body>
+    
     <!-- particles.js container -->
-    <a href="Mine.html"><img src="image/back.jpg"  sizes="(max-width: 30px) 20px, 20px"></a>
-    <div name="form1" action="" method="post" style="position:relative;left:600px;top:200px;">
-            <h1 >FlashBank</h1>
-            <h2>mobilePhoneNumber</h2><input class=input_1 id=mobilePhoneNumber size=15 name="username" placeholder=用户名 value=64657884><br />
-            <input class=input_1 id=mailingAddress size=15 name="username" placeholder=用户名 value=64657884><br />
-            <input class=input_1 id=customerID size=15 name="username" placeholder=用户名 value=64657884><br />
-            <input class=input_1 id=residencephonenumber size=15 name="username" placeholder=用户名 value=64657884><br />
-            <input class=input_1 id=emailaddress size=15 name="username" placeholder=emailaddress value=64657884><br />
-            <input class=input_1 id=residentialaddress size=15 name="username" placeholder=residentialaddress value=64657884><br />
-            <br />
-        <button id='update' style="color: black;"class=input_3 >确认修改</button>
-        <!-- <button id='button1'>测试customerEnquiryApi</button> -->
-    </div>
+    <a href="Mine.html"><img src="image/back.jpg" sizes="(max-width: 30px) 20px, 20px"></a>
+    <h1 style="position:relative;top:20px;left:550px">FlashBank Register</h1>
+    <div class="layui-inline" style="position:relative;left:400px;top:50px;">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">mobilePhoneNumber</label>
+                <div class="layui-input-inline">
+                    <input type="tel" value=64657884 name="phone" lay-verify="required|phone" autocomplete="off"
+                        class="layui-input">
+                </div>
+            </div></br>
+            <div class="layui-inline">
+                <label class="layui-form-label">mailingAddress</label>
+                <div class="layui-input-inline">
+                    <input type="tel" value="551 Austin Road,Tsim Sha Tsui,Kowloon" name="phone"
+                        lay-verify="required|phone" autocomplete="off" class="layui-input">
+                </div>
+            </div></br>
+            <div class="layui-inline">
+                <label class="layui-form-label">customerID</label>
+                <div class="layui-input-inline">
+                    <input type="tel" value="U735535(9)" name="phone" lay-verify="required|phone" autocomplete="off"
+                        class="layui-input">
+                </div>
+            </div></br>
+            <div class="layui-inline">
+                <label class="layui-form-label">residencephonenumber</label>
+                <div class="layui-input-inline">
+                    <input type="tel" value=34828869 name="phone" lay-verify="required|phone" autocomplete="off"
+                        class="layui-input">
+                </div>
+            </div></br>
+            <div class="layui-inline">
+                <label class="layui-form-label">emailaddress</label>
+                <div class="layui-input-inline">
+                    <input type="tel" value="happyday@hotmail.com" name="phone" lay-verify="required|phone"
+                        autocomplete="off" class="layui-input">
+                </div>
+            </div></br>
+            <div class="layui-inline">
+                <label class="layui-form-label">residentialaddress</label>
+                <div class="layui-input-inline">
+                    <input type="tel" value="779 Yi Chun Street, Sai Kung, New Territory" name="phone"
+                        lay-verify="required|phone" autocomplete="off" class="layui-input">
+                </div>
+            </div></br></br>
+            <div style="position:relative;left:220px">
+                <a id='button1'><button type="button" class="layui-btn layui-btn-primary">注册</button></a>
+            </div>
+        </div>
 
 
-    <!-- scripts -->
-    <script type="text/javascript" src="js/script.js"></script>
-    <script src="../particles.js"></script>
-    <script src="js/app.js"></script>
-    <script>
-        $("#update").click(function () {
-            // alert("数据: \n" + "\n状态: ");
-            $.ajax({
-                url: 'https://simnectzplatform.com:8080/simnectz_Bank-Deposit_service-customer_maintenance/deposit/account/custContactInfoUpdate',
-                dataType: 'json',
-                contentType: 'application/json;charset=UTF-8',
-                type: 'post',
-                data: JSON.stringify({
-                    "mobilePhoneNumber": 64657884,
-                    "mailingAddress": "551 Austin Road,Tsim Sha Tsui,Kowloon",
-                    "customerID": "U735535(9)",
-                    "residencephonenumber": 34828869,
-                    "emailaddress": "happyday@hotmail.com",
-                    "residentialaddress": "779 Yi Chun Street, Sai Kung, New Territory"
-                }),
-                headers: {
-                    "Authorization": "5cfe45fe562d5e6ed88a85477be66f0e8d434b40abb98881868a615c",
-                    "messageid": "006f7113e5fa48559549c4dfe74e2cd6",
-                    "clientid": "devin",
-                    "token": "eyJhbGciOiJIUzUxMiIsInppcCI6IkRFRiJ9.eNo8y00OwiAQhuG7zNoFkBLUpbqwadI7ADNWEn4aWozGeHchNs7yme99A9KDfJop9xc4gkTaG6XtTQrRCWEPhMKojhnDLVdKwg5sKnHNr3NCqsF1aORJZxenzRhjvKrJOtr73xr5NLk46tBkdqGlZVlToDyWYCj_hmy7Viw64ik9e6wv-HwBAAD__w.alc0ibAbJotnPxSQL2wtt9Qo8h0YYzl4WkxOK65PnGy1fK4SDmNRRVEohqOya_K7qOXJOt5Cjdm10cejK3PViA"
-                },
-                success: function (res) {
-                    alert("修改成功！")
-                    window.location.href="Mine.html";
-                },
-                error: function (e) {
-                }
+        <!-- scripts -->
+        <script type="text/javascript" src="js/script.js"></script>
+        <script src="../particles.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            $("#update").click(function () {
+                // alert("数据: \n" + "\n状态: ");
+                $.ajax({
+                    url: 'https://simnectzplatform.com:8080/simnectz_Bank-Deposit_service-customer_maintenance/deposit/account/custContactInfoUpdate',
+                    dataType: 'json',
+                    contentType: 'application/json;charset=UTF-8',
+                    type: 'post',
+                    data: JSON.stringify({
+                        "mobilePhoneNumber": 64657884,
+                        "mailingAddress": "551 Austin Road,Tsim Sha Tsui,Kowloon",
+                        "customerID": "U735535(9)",
+                        "residencephonenumber": 34828869,
+                        "emailaddress": "happyday@hotmail.com",
+                        "residentialaddress": "779 Yi Chun Street, Sai Kung, New Territory"
+                    }),
+                    headers: {
+                        "Authorization": "5cfe45fe562d5e6ed88a85477be66f0e8d434b40abb98881868a615c",
+                        "messageid": "006f7113e5fa48559549c4dfe74e2cd6",
+                        "clientid": "devin",
+                        "token": "eyJhbGciOiJIUzUxMiIsInppcCI6IkRFRiJ9.eNo8y00OwiAQhuG7zNoFkBLUpbqwadI7ADNWEn4aWozGeHchNs7yme99A9KDfJop9xc4gkTaG6XtTQrRCWEPhMKojhnDLVdKwg5sKnHNr3NCqsF1aORJZxenzRhjvKrJOtr73xr5NLk46tBkdqGlZVlToDyWYCj_hmy7Viw64ik9e6wv-HwBAAD__w.alc0ibAbJotnPxSQL2wtt9Qo8h0YYzl4WkxOK65PnGy1fK4SDmNRRVEohqOya_K7qOXJOt5Cjdm10cejK3PViA"
+                    },
+                    success: function (res) {
+                        alert("修改成功！")
+                        window.location.href = "Mine.html";
+                    },
+                    error: function (e) {
+                    }
+                });
             });
-        });
-    </script>
+        </script>
 
 
 </body>

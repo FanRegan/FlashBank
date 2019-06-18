@@ -8,7 +8,8 @@
   <meta name="author" content="Vincent Garreau" />
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" media="screen" href="css/style.css">
+  <!-- <link rel="stylesheet" media="screen" href="css/style.css"> -->
+  <link href="./css/bootstrap-4.2.1.css" rel="stylesheet">
   <link rel="stylesheet" href="layui/css/layui.css" media="all">
   <!-- <link rel="stylesheet" media="screen" href="layui/css/layui.css"> -->
   <!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> -->
@@ -17,20 +18,46 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">FlahBank</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#">Account Opening</a> </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Credit card Service </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Cancellation</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Credit card Repayment</a> 
+              </div>
+            </li>
+            
+            <li class="nav-item"> <a class="nav-link" href="Login.html">Login/Register</a> </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" style="position: absolute;right:0px;top:10px;">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
   <!-- particles.js container -->
   <div id="particles-js">
-    <a href="Home2.html"><img src="image/back.jpg"  sizes="(max-width: 30px) 20px, 20px"></a>
-    <div class="layui-inline" style="position:relative;left:450px;top:200px;">
-      <h1 style="color: white">FlashBank手机快捷登录</h1>
+    <!-- <a href="Home2.html"><img src="image/back.jpg"  sizes="(max-width: 30px) 20px, 20px"></a> -->
+    <div class="layui-inline" style="position:relative;left:480px;top:30px;">
+      <h1 style="color: black">FlashBank手机快捷登录</h1>
       <div class="layui-form-item">
-        <label class="layui-form-label" style="color: white">手机号</label>
+        <label class="layui-form-label" style="color: black">手机号</label>
         <div class="layui-input-inline">
           <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input">
         </div>
         <button type="button" class="layui-btn layui-btn-primary">发送验证码</button>
       </div>
       <div class="layui-form-item">
-        <label class="layui-form-label" style="color: white">验证码</label>
+        <label class="layui-form-label" style="color: black">验证码</label>
         <div class="layui-input-inline">
           <input type="password" name="password" lay-verify="pass" placeholder="请输入密码" class="layui-input">
         </div>
