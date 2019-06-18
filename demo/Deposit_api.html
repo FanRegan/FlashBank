@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Deposit.com</title>
+<meta charset="utf-8">
+<!-- <link href="css/text.css" rel="stylesheet"> -->
+<link href="css/formstyle.css" rel='stylesheet' type='text/css' />
+<!--webfonts-->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,700,800' rel='stylesheet' type='text/css'>
+<!--//webfonts-->
+<script src="lib/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+
+</head>
+<body>
+<!-- <div id="box">
+  <form>
+    accountNumber：<searchbox v-model="accountNumber" ></searchbox> 
+    currencyCode:<searchbox v-model="currencyCode" ></searchbox>
+    depositAmount:<searchbox v-model="depositAmount" ></searchbox>
+  </form>
+  <button id="btn"  @click="submit"> Submit </button>
+  <p>搜索：{{depositAmount}}</p>
+
+</div> -->
+<div id='box'>
+  <div class="login-form">
+		<div class="first-login">
+      <h1 style="text-align: center;font-size:68px">Deposit</h1>
+			<form>
+					<li>
+						<input type="text" class="text" value="accountNumber" v-model="accountNumber"
+            @input="handleInput"/>
+          </li>
+          <li>
+            <input type="text" class="text" value="currencyCode" v-model="currencyCode"
+            @input="handleInput"/>
+          </li>
+          <li>
+            <input type="text" class="text" value="depositAmount" v-model="depositAmount"
+            @input="handleInput"/>
+          </li>
+					<div class="submit">
+						<input type="button" @click="submit" value="Submit" > 
+					</div>
+				</form>
+		</div>
+	</div>
+</div>	
+
+<script type="text/javascript">
+  
+var obj = {
+    template:`
+
+        <input type="text" :value="value"
+        @input="handleInput"/>
+
+      `,
+    props : ["value"],   
+
+    methods:{
+      handleInput(ev){
+      this.$emit("input",ev.target.value)
+    }
+  }
+}
+
+var vm = new Vue({
+  el: '#box',
+  data: {
+  accountNumber : "accountNumber",//HK720001001000000001001
+  currencyCode:"currencyCode",//HKD
+  depositAmount : "depositAmount",//300
+ 
+  },
+
+  components:{
+    searchbox:obj
+  },
+  methods: {
+    handleInput(ev){
+      this.$emit("input",ev.target.value)
+    },
+    
+    submit() {
+      var params ={
+        depositAmount : this.depositAmount,
+        accountNumber : this.accountNumber,
+        currencycode:this.currencyCode,
+      }
+      var param = JSON.stringify(params)
+      console.log(param)
+      axios({
+      method:'post',
+      url:'https://simnectzplatform.com:8080/simnectz_Bank-Deposit_service-transaction/deposit/account/deposit',
+      // http://47.112.146.96
+      data:param,  
+      headers:{
+        'Authorization':"5cfe45fe562d5e6ed88a85479b512397dad6497494e8a72660af999a",
+        'token':"eyJhbGciOiJIUzUxMiIsInppcCI6IkRFRiJ9.eNo8y00OwiAQhuG7zNoFkBLUpbqwadI7ADNWEn4aWozGeHchNs7yme99A9KDfJop9xc4gkTaG6XtTQrRCWEPhMKojhnDLVdKwg5sKnHNr3NCqsF1aORJZxenzRhjvKrJOtr73xr5NLk46tBkdqGlZVlToDyWYCj_hmy7Viw64ik9e6wv-HwBAAD__w.alc0ibAbJotnPxSQL2wtt9Qo8h0YYzl4WkxOK65PnGy1fK4SDmNRRVEohqOya_K7qOXJOt5Cjdm10cejK3PViA",
+        'messageid':"006f7113e5fa48559549c4dfe74e2cd6",
+        'clientid':"devin",
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':"*",
+        },
+       })
+      .then(function (response) {
+          console.log(response.data)
+        })
+      .catch(function (error) {
+          console.log(error);
+  })
+    }
+  }
+})
+  
+</script>
+</body>
+</html>
