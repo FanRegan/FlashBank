@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+		  
 		<style>
+ 
 			#container {	
 				width: 1100px;	
 				height: 700px;	
@@ -19,12 +21,14 @@
 				35%, 60% {		
 					margin-left: -1100px;	}	
 				70%, 100% {		margin-left: -2200px;	}}
+
+
 </style>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title>Bootstrap Agency Page Template</title>
     <!-- Bootstrap -->
     <link href="./css/bootstrap-4.2.1.css" rel="stylesheet">
   </head>
@@ -35,18 +39,47 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Account Opening</a> </li>
+         
+			 <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account Creation </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="AccountCreation_api.html">Deposit Account</a> <a class="dropdown-item" href="AccountCreation_api.html">Other Account</a> 
+				
+              <div class="dropdown-divider"></div>
+
+            </div>
+          </li>
+			
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transaction</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="./Deposit.html">Deposit</a> <a class="dropdown-item" href="#">Withdrawal</a> <a class="dropdown-item" href="#">Transfer</a><a class="dropdown-item" href="#">ChequeBook Creation</a>
+				
+              <div class="dropdown-divider"></div>
+
+            </div>
+          </li>
+
+			          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Investment Service </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Mutual Fund</a> <a class="dropdown-item" href="#">Stock Trading</a> <a class="dropdown-item" href="./Investment.html">Foreign Currency Exchange</a>
+				
+              <div class="dropdown-divider"></div>
+
+            </div>
+          </li>
+			
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Credit card Service </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Cancellation</a>
+              <a class="dropdown-item" href="#">Account Opening</a> <a class="dropdown-item" href="#">Cancellation</a><a class="dropdown-item" href="./Credit card Repayment.html">Credit card Repayment</a> 
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Credit card Repayment</a> 
+              
             </div>
           </li>
-          
-          <li class="nav-item"> <a class="nav-link" href="Mine.html">Me</a> </li>
+         
+			<a class="nav-link" href="./index.html">Login <span class="sr-only">(current)</span></a>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -67,7 +100,7 @@
 						  
 			
 <div id="container">
-	<h1 class="text-center">FlashBank  闪银中国</h1>
+	<h1 class="text-center">FlashBank </h1>
     <div id="photo">
         <img src="./images/4.jpg"/>
         <img src="./images/6.jpg"/>
@@ -78,7 +111,7 @@
               
               <p class="text-center"></p>
               <p>&nbsp;</p>
-              <p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">开个户吧 ！</a> </p>
+              <p class="text-center"><a class="btn btn-primary btn-lg" href="AccountCreation_api.html" role="button">Let's start</a> </p>
             </div>
           </div>
         </div>
@@ -98,7 +131,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Urban services</h5>
                   
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="#" class="btn btn-primary">Go More</a>
                 </div>
               </div>
             </div>
@@ -108,7 +141,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Wealth Management</h5>
                   
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="#" class="btn btn-primary">Go More</a>
                 </div>
               </div>
             </div>
@@ -120,7 +153,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Credit Card</h5>
                   
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="#" class="btn btn-primary">Go More</a>
                 </div>
               </div>
             </div>
@@ -130,7 +163,7 @@
                 <div class="card-body">
                   <h5 class="card-title">More Services</h5>
                   
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="#" class="btn btn-primary">Go sMore</a>
                 </div>
               </div>
             </div>
