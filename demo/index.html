@@ -1,65 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>particles.js</title>
   <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
   <meta name="author" content="Vincent Garreau" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" media="screen" href="css/style.css">
   <!-- <link rel="stylesheet" type="text/css" href="css/css.css"> -->
   <!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-<!-- <script
-	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script> -->
-<!-- <script
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- <script
 	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </head>
+
 <body>
 
-<!-- count particles -->
-<!-- <div class="count-particles">
-  <span class="js-count-particles">--</span> particles
-</div> -->
+  <!-- particles.js container -->
+  <div id="particles-js">
 
-<!-- particles.js container -->
-<div id="particles-js">
-
-  <form name="form1" action="" method="post">
-    <h1>FlashBank</h1>
-      <input class=input_1 id=username size=15  name="username"  placeholder=用户名><br />
+    <form name="form1" action="" method="post">
+      <h1>FlashBank</h1>
+      <input class=input_1 id=username size=15 name="username" placeholder=用户名><br />
       <input class=input_1 id=password type=text size=15 name="password" placeholder=密码><br />
-<br/>
-      <button class=input_3 >登录</button>
-      <button class=input_3 >注册</button>
- </form>
-</div>
+      <br />
+      <button class=input_3>登录</button>
+      <button class=input_3>注册</button>
+    </form>
+    <div id='test'></div>
+    <button id='button1'>测试customerCreationApi</button>
+  </div>
 
-<script type="text/javascript" src="js/script.js"></script>     
-<!-- stats.js -->
-<!-- <script src="js/lib/stats.js"></script> -->
 
-<!-- scripts -->
-<script src="../particles.js"></script>
-<script src="js/app.js"></script>
-<script>
-  var count_particles, stats, update;
-  stats = new Stats;
-  stats.setMode(0);
-  stats.domElement.style.position = 'absolute';
-  stats.domElement.style.left = '0px';
-  stats.domElement.style.top = '0px';
-  document.body.appendChild(stats.domElement);
-  count_particles = document.querySelector('.js-count-particles');
-  update = function() {
-    stats.begin();
-    stats.end();
-    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-    }
-    requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
-</script>
-
+  <!-- scripts -->
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="../particles.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    $("#button1").click(function () {
+      alert("数据: \n" + "\n状态: ");
+      $.ajax({
+        url: 'https://simnectzplatform.com:8080/simnectz_Bank-Deposit_service-customer_maintenance/deposit/account/customerCreation',
+        dataType: 'json',
+        "Content-Type": 'application/json',
+        type:'post',
+        data: JSON.stringify({
+          "yearsofresidence": 3,
+          "firstname": "Yan",
+          "education": "U",
+          "occupation": "Software",
+          "gender": "M",
+          "countrycode": "HK",
+          "yearsofservices": 2,
+          "companyaddress": "228 Pok Fu Lam Road,Aberdeen,Hong Kong",
+          "monthlysalary": 19000,
+          "chinesename": "çç ",
+          "wechatid": "W3456754",
+          "employercompanyname": "HSBC",
+          "residentialaddress": "779 Yi Chun Street, Sai Kung, New Territory",
+          "branchcode": "001",
+          "mobilePhoneNumber": 64657884,
+          "companyphonenumber": 24827781,
+          "residencephonenumber": 34828869,
+          "dateOfBirth": "1975-08-25",
+          "emailaddress": "happyday@hotmail.com",
+          "lastname": "Wong",
+          "nationality": "China",
+          "mailingAddress": "551 Austin Road,Tsim Sha Tsui,Kowloon",
+          "maritalstatus": "S",
+          "accommodation": "S",
+          "customerID": "U735535(9)",
+          "issueCountry": "China",
+          "clearingcode": "0001",
+          "position": "Senior Manager",
+          "permanentresidencestatus": "Y"
+        }),
+        headers: {
+          "Authorization": "5cfe45fe562d5e6ed88a85477be66f0e8d434b40abb98881868a615c",
+          "messageid":"006f7113e5fa48559549c4dfe74e2cd6",
+          "clientid":"devin",
+          "token": "eyJhbGciOiJIUzUxMiIsInppcCI6IkRFRiJ9.eNo8y00OwiAQhuG7zNoFkBLUpbqwadI7ADNWEn4aWozGeHchNs7yme99A9KDfJop9xc4gkTaG6XtTQrR\CWEPhMKojhnDLVdKwg5sKnHNr3NCqsF1aORJZxenzRhjvKrJOtr73xr5NLk46tBkdqGlZVlToDyWYCj_hmy7Viw64ik9e6wv-HwBAAD__w.alc0ibAbJotnPxSQL2wtt9Qo8h0YYzl4WkxOK65PnGy1fK4SDmNRRVEohqOya_K7qOXJOt5Cjdm10cejK3PViA"
+        },
+        success: function (res) {
+          alert(res.code)
+        },
+        error: function (e) {
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
