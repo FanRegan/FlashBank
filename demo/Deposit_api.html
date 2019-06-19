@@ -112,6 +112,7 @@ var vm = new Vue({
       .then(function (response) {
           alert(response.data.msg);
           console.log(response.data)
+          window.location.href="Home1.html"
         })
       .catch(function (error) {
           console.log(error);

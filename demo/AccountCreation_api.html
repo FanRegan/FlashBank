@@ -121,6 +121,7 @@ var vm = new Vue({
       .then(function (response) {
           alert('Succeed '+response.data.msg+' '+response.data.data)
           console.log(response.data)
+          window.location.href="Home1.html"
         })
       .catch(function (error) {
           console.log(error);
