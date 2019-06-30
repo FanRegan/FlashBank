@@ -1,0 +1,42 @@
+
+body{
+    background-image:url("../images/1.png");
+    background-repeat:no-repeat ;
+    background-position:50% 22% ;
+    /* background-size:cover; */
+    /* background:rgb(255, 223, 223) */
+}
+#box{
+    text-align: center;
+    width: 380px;
+    margin: 0 auto;
+    margin-top:2%;
+    /* margin: 2%; */
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+    position: relative;
+    z-index: 101;
+    /* left: 35%; */
+    top: 20%;
+}
+input{
+    width: 200px;
+    border: 1px solid #e2e2e2;
+    height: 30px;
+    margin: 1px;
+    /* left:20%; */
+    background-repeat: no-repeat;
+    padding:0 0 0 40px;
+    
+}
+#btn{
+    width: 78px;
+    height: 35px;
+    top:30%;
+    /*float: right;*/
+    background: #e2e2e2;
+    color: black;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+}
