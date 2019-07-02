@@ -32,7 +32,6 @@ function action()
 
 				for (var i=0; i < array.length; i++)
 				{
-					// Æô·¢Ê½   console.log(array[i]);
 					var result = array[i];
 					$(".b-body").append("<div class='rotWord'><span></span> <p id='member'>" + result + "</p></div>");
 					$(".b-body").scrollTop(10000000);
