@@ -57,4 +57,4 @@ class QA():
                     count+=1.0
             if (count/total>0.5):
                 return {'message': 'success','result': QA_Data[q]}
-        return {'message': 'fail','result': "我无法回答你哦。"}
+        return {'message': 'fail','result': 0}
