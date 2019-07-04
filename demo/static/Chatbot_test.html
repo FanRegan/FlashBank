@@ -370,9 +370,13 @@
     <script type="text/javascript">
 
         $(function () {
+<<<<<<< HEAD
 
             var htmll = "<div class='rotWord'><span></span></div><div class='left'><span class='msg'>你好，我是FlashBank，有什么可以为你效劳的呢？</span></div>"
 
+=======
+            var htmll = "<div class='left'><img src='./images/jimi.png' width='50' height='50'><span class='msg'>你好，我是FlashBank，有什么可以为你效劳的呢？</span></div>"
+>>>>>>> 302ca251794d3d0805a5de615fda539b6070a274
             $(".center").append(htmll);
 
         });
@@ -390,7 +394,10 @@
             center.append(htmlr);
 
             $("#sendContent").val("");
+<<<<<<< HEAD
 
+=======
+>>>>>>> 302ca251794d3d0805a5de615fda539b6070a274
             var querybody = {
 
                 "question": content,
@@ -414,6 +421,7 @@
                 success: function (result) {
 
                     var obj = result;
+<<<<<<< HEAD
 
                     if (obj.result == 0) {
 
@@ -475,6 +483,38 @@
 
             });
 
+=======
+                    if (obj.result == 0) {
+                        $.ajax({
+                            type: "get",
+                            // url:"http://www.tuling123.com/openapi/api?key=80baea7bc2fb422bbba097909952e90c&info="+content,
+                            // url:"http://web.juhe.cn:8080/finance/stock/hs?gid=sh601009&key="+content,
+                            url: "http://www.tuling123.com/openapi/api?key=49de46c409c047d19b2ed2285e8775a6&info=" + content,
+                            // url:"http://www.tuling123.com/openapi/api?key=cf1252ef2d834d71a1219c6d48ff77db&info="+content,
+                            success: function (result) {
+                                var obj = result;
+                                var tmp = "<span>" + obj.text + "</span>"
+                                if (obj.url) {
+                                    tmp += "<a href='" + obj.url + "' target='_blank'>" + obj.text + "</a>"
+                                }
+                                var htmll = "<div class='left'><img src='./images/jimi.png' width='50' height='50'><span class='msg'>" + tmp + "</span></div>"
+                                center.append(htmll);
+                                center.scrollTop(center[0].scrollHeight);
+                            }
+                        });
+                    }
+                    else {
+                        var tmp = "<span>" + obj.result + "</span>"
+                        if (obj.url) {
+                            tmp += "<a href='" + obj.url + "' target='_blank'>" + obj.result + "</a>"
+                        }
+                        var htmll = "<div class='left'><img src='./images/jimi.png' width='50' height='50'><span class='msg'>" + tmp + "</span></div>"
+                        center.append(htmll);
+                        center.scrollTop(center[0].scrollHeight);
+                    }
+                }
+            });
+>>>>>>> 302ca251794d3d0805a5de615fda539b6070a274
         });
 
         window.onkeydown = function (e) {
