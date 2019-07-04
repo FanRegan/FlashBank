@@ -5,7 +5,7 @@
 
 
 <head>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="UTF-8">
 
     <meta name="Author" content="ZacharyJoke">
@@ -436,22 +436,21 @@
 
                             success: function (result) {
 
-                                var obj = result;
+                                var obj1 = result;
 
-                                var tmp = "<span>" + obj.text + "</span>"
+                                var tmp = "<span>" + obj1.text + "</span>"
 
-                                if (obj.url) {
+                                if (obj1.url) {
 
-                                    tmp += "<a href='" + obj.url + "' target='_blank'>" + obj.text + "</a>"
+                                    tmp += "<a href='" + obj1.url + "' target='_blank'>" + obj1.text + "</a>"
 
                                 }
 
-                                var htmll = "<div class='rotWord'><span></span></div><div class='left'></div><span class='msg'>" + tmp + "</span></div>"
+                                var htmll = "<div class='rotWord'><span></span></div><div class='left'><span class='msg'>" + tmp + "</span></div>"
 
                                 center.append(htmll);
 
                                 center.scrollTop(center[0].scrollHeight);
-
                             }
 
                         });
@@ -479,40 +478,7 @@
                 }
 
             });
-
-
-                    if (obj.result == 0) {
-                        $.ajax({
-                            type: "get",
-                            // url:"http://www.tuling123.com/openapi/api?key=80baea7bc2fb422bbba097909952e90c&info="+content,
-                            // url:"http://web.juhe.cn:8080/finance/stock/hs?gid=sh601009&key="+content,
-                            url: "http://www.tuling123.com/openapi/api?key=49de46c409c047d19b2ed2285e8775a6&info=" + content,
-                            // url:"http://www.tuling123.com/openapi/api?key=cf1252ef2d834d71a1219c6d48ff77db&info="+content,
-                            success: function (result) {
-                                var obj = result;
-                                var tmp = "<span>" + obj.text + "</span>"
-                                if (obj.url) {
-                                    tmp += "<a href='" + obj.url + "' target='_blank'>" + obj.text + "</a>"
-                                }
-                                var htmll = "<div class='left'><img src='./images/jimi.png' width='50' height='50'><span class='msg'>" + tmp + "</span></div>"
-                                center.append(htmll);
-                                center.scrollTop(center[0].scrollHeight);
-                            }
-                        });
-                    }
-                    else {
-                        var tmp = "<span>" + obj.result + "</span>"
-                        if (obj.url) {
-                            tmp += "<a href='" + obj.url + "' target='_blank'>" + obj.result + "</a>"
-                        }
-                        var htmll = "<div class='left'><img src='./images/jimi.png' width='50' height='50'><span class='msg'>" + tmp + "</span></div>"
-                        center.append(htmll);
-                        center.scrollTop(center[0].scrollHeight);
-                    }
-                }
-            });
-
-        });
+        })         
 
         window.onkeydown = function (e) {
 
