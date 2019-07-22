@@ -1,14 +1,44 @@
 import jieba
 import jieba.posseg as pseg #词性标注
 import jieba.analyse as anls #关键词提取
+import pymysql
 
 
+# 导入pymysql模块
+
+# 连接database
+# conn = pymysql.connect(host="localhost", user="root",password="root",database="cloud",charset="utf8")
+
+db= pymysql.connect(host="localhost",user="root",  
+    password="root",db="cloud",port=3306)  
+  
+# 使用cursor()方法获取操作游标  
+cur = db.cursor()  
+  
+#1.查询操作  
+# 编写sql 查询语句  user 对应我的表名  
+sql = "SELECT * FROM rules"
+try:  
+    cur.execute(sql)    #执行sql语句  
+  
+    results = cur.fetchall()    #获取查询的所有记录  
+    # print("id","rule")  
+    #遍历结果  
+    for row in results :  
+        id = row[0]  
+        rule = row[1]  
+        # print (id,rule)
+except Exception as e:  
+    raise e  
+finally:  
+    db.close()  #关闭连接  
+b = eval(rule)
+print(type(b))
 
 class QA():
 
     def Qa(self,question):
-        QA_Data={
-'什么是FlashBank？':'FlashBank是一站式的网上银行系统，可以满足您从储蓄到投资等的一切业务需求。更多详细信息可以通过页面下方的”Request a free quote”联系我们。',
+        QA_Data={'什么是FlashBank？':'FlashBank是一站式的网上银行系统，可以满足您从储蓄到投资等的一切业务需求。更多详细信息可以通过页面下方的”Request a free quote”联系我们。',
 '怎么开银行卡？':'开银行卡请带好身份证到线下银行办理开户服务。',
 '我想开银行卡':'开银行卡请带好身份证到线下银行办理开户服务。',
 '如何查询余额':'在客户端查询界面输入卡号即可查询。',
@@ -45,8 +75,7 @@ class QA():
 '如何查看信用卡账户转账记录':'打开网页底部”Credit Card”模块界面，选择” transactionDetails”功能，根据指示填写相关信息即可。',
 '如何查看信用卡账户还款信息':'打开网页底部”Credit Card”模块界面，选择” outstandingPayment”功能，根据指示填写相关信息即可。',
 '如何信用卡账户积分查询':'打开网页底部”Credit Card”模块界面，选择” CreditPoint”模块，根据指示进行操作即可。',
-'如何进行信用卡账户还款':'打开网页顶端导航栏” Credit card payment”或者网页底部”Credit Card”模块界面，选择” Credit card payment”功能，根据指示填写相关信息即可。',
-}
+'如何进行信用卡账户还款':'打开网页顶端导航栏” Credit card payment”或者网页底部”Credit Card”模块界面，选择” Credit card payment”功能，根据指示填写相关信息即可。'}
         qlist = jieba.lcut(question, cut_all=True)
         print(qlist)
         for q in QA_Data:
